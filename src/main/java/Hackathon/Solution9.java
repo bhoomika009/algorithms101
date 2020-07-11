@@ -1,12 +1,11 @@
 package Hackathon;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Solution9 {
 
-    static int stockPairs(int arr[], int target)
+    static int SumPairs(int arr[], int target)
     {
         int count = 0;
         for (int i = 0; i < arr.length; i++)
@@ -19,7 +18,7 @@ public class Solution9 {
     return count;
 }
 
-    public static int SumPairs(int[] input, int k){
+    static int stockPairs(int[] input, int k){
         Map<Integer, Integer> frequencies = new HashMap<>();
         int pairsCount = 0;
 
@@ -30,7 +29,6 @@ public class Solution9 {
             if(frequencies.containsKey(complement)){
                 int freq = frequencies.get(complement) - 1;
                 pairsCount++;
-                //System.out.println(value + ", " + complement);
                 if(freq == 0){
                     frequencies.remove(complement);
                 }else{
@@ -58,8 +56,7 @@ public class Solution9 {
             }
             System.out.println("Enter the target");
             int target = scan.nextInt();
-         //  System.out.println("no of pairs......."+stockPairs(arrayOfSerialNumber,target));
-            System.out.println("no of pairs......."+ SumPairs(arrayOfSerialNumber,target));
+            System.out.println("no of pairs......."+ stockPairs(arrayOfSerialNumber,target));
         } catch (Exception e) {
             System.out.println("exception occured" + e.getStackTrace());
         }

@@ -12,11 +12,12 @@ public class Solution8 {
         for (int i = 0; i < count; i++) {
             input[i] = s.nextInt();
         }
-        reassignedPriorities(input);
+        System.out.println(Arrays.toString(reassignedPriorities(input)));
+        ;
         }
 
 
-    private static void reassignedPriorities(int priorities[]){
+     static int[] reassignedPriorities(int priorities[]){
         Integer[] prioritiesList = new Integer[priorities.length];
         for (int i = 0; i < priorities.length; i++) {
             prioritiesList[i] = Integer.valueOf(priorities[i]);
@@ -30,15 +31,15 @@ public class Solution8 {
             sortedMap.put(count++,i);
         }
 
-        List<Integer> subset = new ArrayList<>();
-        for(int i :priorities){
+       int[] subset = new int[priorities.length];
+        for(int i=0;i<priorities.length;i++){
             for (Map.Entry<Integer,Integer> entry : sortedMap.entrySet())
             {
-                if(i==entry.getValue()){
-                    subset.add(entry.getKey());
+                if(priorities[i]==entry.getValue()){
+                    subset[i]=entry.getKey();
                 }
             }
         }
-        System.out.println(subset);
+        return subset;
     }
 }

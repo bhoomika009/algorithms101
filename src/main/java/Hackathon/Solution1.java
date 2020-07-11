@@ -5,8 +5,7 @@ import java.util.Scanner;
 
 class Solution1
 {
-
-    private static int countCounterfeit(String arrayOfSerialNumber[]){
+    static int countCounterfeit(String arrayOfSerialNumber[]){
         int sum = 0;
             for (String s : arrayOfSerialNumber) {
                 if (s.length() > 9 && s.length() < 13) {
@@ -30,7 +29,7 @@ class Solution1
     }
 
 
-    private static boolean isStringUniqueUpperCase(char[] charArray){
+     static boolean isStringUniqueUpperCase(char[] charArray){
         for(int i:charArray){
                 if(!Character.isUpperCase(i))
                 return false;
@@ -38,7 +37,7 @@ class Solution1
         return true;
     }
 
-    private static boolean findDuplicate(char[] chArray)
+     static boolean findDuplicate(char[] chArray)
     {
         Arrays.sort(chArray);
         for (int i = 0; i < chArray.length - 1; i++) {
@@ -50,14 +49,14 @@ class Solution1
         return true;
     }
 
-    private static boolean Test3(int x)
+     static boolean Test3(int x)
     {
         int min = 1900;
         int max = 2019;
         return x>min && x<=max;
     }
 
-    private static boolean Test4(int x)
+     static boolean Test4(int x)
     {
         ArrayList<Integer> arr = new ArrayList<Integer>(7);
         arr.add(10);
