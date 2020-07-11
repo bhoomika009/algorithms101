@@ -15,15 +15,14 @@ public class Solution2 {
         int gap = 0;
         int m = start.length;
         boolean[] array = new boolean[n];
-        for(int k =0; k<m-1;k++) {
-            for (int j = start[k]; j < finish[k]; j++) {
+        for(int k =0; k<=m-1;k++) {
+            for (int j = start[k]-1; j < finish[k]-1; j++) {
                 array[j] = true;
             }
         }
         gap=getMaxLength(array);
         return gap;
     }
-
     static int getMaxLength(boolean arr[])
     {
 
@@ -34,7 +33,7 @@ public class Solution2 {
         for (int i = 0; i < n; i++)
         {
 
-            if (arr[i] == false)
+            if (arr[i] == true)
                 count = 0;
             else
             {
